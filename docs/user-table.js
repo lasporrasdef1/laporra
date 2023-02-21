@@ -1,32 +1,36 @@
-const userTableBody = document.getElementById("user-table-body");
-
-// Function to retrieve the users and their points from users.json
-function getUsers() {
-  return fetch("users.json").then((response) => response.json());
-}
-
-// Function to create a row in the user table
-function createRow(username, points) {
-  const row = document.createElement("tr");
-  const usernameCell = document.createElement("td");
-  const pointsCell = document.createElement("td");
-  usernameCell.textContent = username;
-  pointsCell.textContent = points;
-  row.appendChild(usernameCell);
-  row.appendChild(pointsCell);
-  return row;
-}
-
-// Function to display the users and their points in the user table
-function displayUsers() {
-  getUsers().then((users) => {
-    userTableBody.innerHTML = ""; // Clear existing rows
-    Object.keys(users).forEach((username) => {
-      const points = users[username];
-      const row = createRow(username, points);
-      userTableBody.appendChild(row);
-    });
-  });
-}
-
-displayUsers(); // Display the users on page load
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Webpage</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Welcome to my webpage!</h1>
+    <div id="auth-form">
+      <h2>Log in</h2>
+      <form id="login-form">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required />
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required />
+        <button type="submit">Log in</button>
+      </form>
+      <p id="auth-message"></p>
+    </div>
+    <div id="user-table">
+      <h2>User table</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Username</th>
+            <th>Points</th>
+          </tr>
+        </thead>
+        <tbody id="user-table-body"></tbody>
+      </table>
+    </div>
+    <script src="auth.js"></script>
+    <script src="user-table.js"></script>
+  </body>
+</html>
