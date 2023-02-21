@@ -1,10 +1,17 @@
 [
   {
-    "username": "john",
-    "password": "password123"
+    "username": "Alice",
+    "password": "123456",
+    "points": 0
   },
   {
-    "username": "jane",
-    "password": "password456"
+    "username": "Bob",
+    "password": "password123",
+    "points": 0
+  },
+  {
+    "username": "Charlie",
+    "password": "letmein",
+    "points": 0
   }
 ]
