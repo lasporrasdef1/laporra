@@ -2,13 +2,34 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>My Webpage</title>
+    <title>Login</title>
     <style>
       /* Add your CSS styling here */
+      label, input {
+        display: block;
+        margin-bottom: 10px;
+      }
+      input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      input[type="submit"]:hover {
+        background-color: #45a049;
+      }
     </style>
   </head>
   <body>
-    <h1>Hello, world!</h1>
-    <p>Welcome to my webpage.</p>
+    <h1>Login</h1>
+    <form method="POST" action="/login">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+      <input type="submit" value="Log In">
+    </form>
   </body>
 </html>
